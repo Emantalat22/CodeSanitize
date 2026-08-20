@@ -12,7 +12,8 @@ import {
 } from '../types';
 
 
-const API_BASE_URL = '/api';
+const envBaseUrl = (import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '/api') as string;
+const API_BASE_URL = envBaseUrl.endsWith('/') ? envBaseUrl.slice(0, -1) : envBaseUrl;
 
 export class ApiError extends Error {
   constructor(

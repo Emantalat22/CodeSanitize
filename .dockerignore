@@ -1,0 +1,14 @@
+.git
+.gitignore
+.hypothesis
+.pytest_cache
+__pycache__
+*.pyc
+node_modules
+frontend/node_modules
+frontend/dist
+.venv
+venv
+.env
+.codesanitize_history
+*.timestamp-*

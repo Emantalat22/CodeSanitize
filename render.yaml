@@ -1,0 +1,15 @@
+services:
+  # Unified Fullstack Service on Render (React SPA + FastAPI Backend)
+  - type: web
+    name: codesanitize
+    runtime: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: ENVIRONMENT
+        value: production
+      - key: DEBUG
+        value: "false"
