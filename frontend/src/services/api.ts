@@ -12,7 +12,10 @@ import {
 } from '../types';
 
 
-const envBaseUrl = (import.meta.env.VITE_API_BASE_URL || import.meta.env.VITE_API_URL || '/api') as string;
+const envBaseUrl: string =
+  (import.meta.env?.VITE_API_BASE_URL as string | undefined) ||
+  (import.meta.env?.VITE_API_URL as string | undefined) ||
+  '/api';
 const API_BASE_URL = envBaseUrl.endsWith('/') ? envBaseUrl.slice(0, -1) : envBaseUrl;
 
 export class ApiError extends Error {
